@@ -1,5 +1,6 @@
 import ContactsListItem from "./ContactsListItem";
 import style from './Contacts.module.css'
+import PropTypes from 'prop-types'
 
 const Contacts = ({filter, contacts, onDeleteContact}) => {
     
@@ -15,3 +16,9 @@ const Contacts = ({filter, contacts, onDeleteContact}) => {
 }
 
 export default Contacts;
+
+Contacts.propType = {
+    contacts: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),),
+  }
